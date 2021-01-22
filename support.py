@@ -23,12 +23,16 @@ def importData(root_directory, filetype, rowrange = [], verbose = False):
         - rowrange (list) start and end-1 rows to filter by e.g. [0,500] for 0-499 (remember pythonic number indexing, not excel)
         - verbose (bool) turn True if would like to see file list output
     '''
-    print("WARNING: This will read files in the sequential order that they appear in the folder. Enable verbose to confirm.")
+    print("WARNING: This will read files in the alphabetical order that they appear in the folder. Enable verbose to confirm.")
     df_list = []
     # Feature .csv
     if filetype == '.csv':
         file_list = list(glob.glob(root_directory+'*.csv'))
-        file_list = file_list.sort()
+        file_list.sort()
+        if verbose:
+            print("Loading files in this order: ")
+            for file in file_list:
+                print(f"{file[-40:]}")
         n_files = len(file_list)
         print(f"{n_files} '.csv' files found in this directory.")
         for file in file_list:
@@ -39,7 +43,11 @@ def importData(root_directory, filetype, rowrange = [], verbose = False):
     # Annotation pickled dataframes
     elif filetype == '.pickle':
         file_list = list(glob.glob(root_directory+'*.pickle'))
-        file_list = file_list.sort()
+        file_list.sort()
+        if verbose:
+            print("Loading files in this order: ")
+            for file in file_list:
+                print(f"{file[-40:]}")
         n_files = len(file_list)
         print(f"{n_files} '.pickles' files found in this directory.")
         for file in file_list:
@@ -48,11 +56,6 @@ def importData(root_directory, filetype, rowrange = [], verbose = False):
     else:
         print("Warning: Unrecognized filetype encountered. Please try '.csv' or '.pickle'.")
 
-    if verbose:
-        print("Loading files in this order: ")
-        for i in range(n_files):
-            print(f"{file_list[i][-40:]}")
-            
     return df_list
 
 
