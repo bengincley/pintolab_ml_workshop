@@ -28,7 +28,7 @@ def importData(root_directory, filetype, rowrange = [], verbose = False):
     # Feature .csv
     if filetype == '.csv':
         file_list = list(glob.glob(root_directory+'*.csv'))
-		file_list = file_list.sort()
+        file_list = file_list.sort()
         n_files = len(file_list)
         print(f"{n_files} '.csv' files found in this directory.")
         for file in file_list:
@@ -39,7 +39,7 @@ def importData(root_directory, filetype, rowrange = [], verbose = False):
     # Annotation pickled dataframes
     elif filetype == '.pickle':
         file_list = list(glob.glob(root_directory+'*.pickle'))
-		file_list = file_list.sort()
+        file_list = file_list.sort()
         n_files = len(file_list)
         print(f"{n_files} '.pickles' files found in this directory.")
         for file in file_list:
