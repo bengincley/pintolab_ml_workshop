@@ -111,9 +111,9 @@ def reClass(labels,reclassdict):
             - Keys = the class label you want to change to, 
             - Values = the class label to be reassigned
         '''
-    if type(labels) is not (np.ndarray or pandas.core.series.Series):
-        print("Note: Labels should be of type: ndarray OR Series")
-        print("Type passed: ",type(labels))
+    #if type(labels) is not (np.ndarray or pandas.core.series.Series):
+        #print("Note: Labels should be of type: ndarray OR Series")
+        #print("Type passed: ",type(labels))
     for key, value in reclassdict.items():
         print(f"{key} from {value}")
         for val in value:
