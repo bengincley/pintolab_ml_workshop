@@ -1,1 +1,1 @@
-Example Workflow for classification with a random forest model using the TidyModel package
+In this directory is an RMarkdown and knitted HTML file demonstrating a workflow for random forest classifiction using the TidyModels package. See http://tmwr.org/, an open source book, to learn more about the package. To view the knitted HTML file, download to your local computer and open in the browser.
